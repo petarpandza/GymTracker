@@ -1,0 +1,125 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.session {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a2a2a;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.session-details {
+    flex-grow: 1;
+}
+
+.session-name {
+    font-size: 1.2em;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.session-time, .session-duration {
+    margin-left: 10px;
+    font-size: 0.9em;
+    color: #aaaaaa;
+}
+
+.session-actions {
+    display: flex;
+    align-items: center;
+}
+
+.edit-link {
+    background-color: #444444;;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.edit-link:hover {
+    background-color: #555555;
+}
+
+.delete-link {
+    background-color: orangered;
+    color: #ffffff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-link:hover {
+    background-color: red;
+}
+
+.link-button {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+}
+
+.link-button:hover {
+    text-decoration: none;
+}
+
+.inline {
+    display: inline;
+}
+
+.link-button {
+    background: none;
+    border: none;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: serif;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.logo img {
+    width: 10vw;
+    height: auto;
+    cursor: pointer;
+}
+
+.graph-image {
+    display: block;
+    width: 60%;
+    height: auto;
+    max-height: 30%;
+    margin: 0 auto 30px auto;
+}

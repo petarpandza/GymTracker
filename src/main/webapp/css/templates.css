@@ -1,0 +1,108 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.template {
+    background-color: #2b2b2b;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.template-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.template-name {
+    color: #ffd700;
+    font-size: 1.5em;
+}
+
+.template-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.start-button,
+.delete-button {
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.start-button {
+    background-color: forestgreen;
+}
+
+.delete-button {
+    background-color: orangered;
+}
+
+.start-button:hover {
+    background-color: green;
+}
+
+.delete-button:hover {
+    background-color: red;
+}
+
+.template-exercises {
+    margin-top: 10px;
+    color: #888888;
+}
+
+.exercise-name {
+    display: block;
+}
+
+.create-button {
+    background-color: forestgreen;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.create-button:hover {
+    background-color: green;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.logo img {
+    width: 10vw;
+    height: auto;
+    cursor: pointer;
+}

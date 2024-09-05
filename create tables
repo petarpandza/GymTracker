@@ -1,0 +1,88 @@
+CREATE TABLE Korisnik
+(
+    jeAdmin INTEGER NOT NULL,
+    korisnickoIme TEXT NOT NULL,
+    spol INTEGER,
+    idKorisnik INTEGER PRIMARY KEY AUTOINCREMENT,
+    hashLozinka TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE,
+    saltLozinka TEXT NOT NULL
+);
+
+CREATE TABLE Trening
+(
+    vrijemePocetka TEXT NOT NULL,
+    trajanje INTEGER NOT NULL,
+    imeTrening TEXT NOT NULL,
+    idTrening INTEGER PRIMARY KEY AUTOINCREMENT,
+    idKorisnik INTEGER NOT NULL,
+    FOREIGN KEY (idKorisnik) REFERENCES Korisnik(idKorisnik)
+);
+
+CREATE TABLE VrstaVjezbe
+(
+    idVrstaVjezbe INTEGER PRIMARY KEY AUTOINCREMENT,
+    imeVrstaVjezbe TEXT NOT NULL
+);
+
+CREATE TABLE VrstaSerije
+(
+    idVrstaSerije INTEGER PRIMARY KEY,
+    imeVrstaSerije TEXT NOT NULL
+);
+
+CREATE TABLE PredlozakTreninga
+(
+    idPredlozak INTEGER PRIMARY KEY AUTOINCREMENT,
+    imePredlozak TEXT NOT NULL,
+    idKorisnik INTEGER NOT NULL,
+    FOREIGN KEY (idKorisnik) REFERENCES Korisnik(idKorisnik)
+);
+
+CREATE TABLE Vjezba
+(
+    imeVjezba TEXT NOT NULL,
+    idVjezba INTEGER PRIMARY KEY AUTOINCREMENT,
+    opisVjezba TEXT NOT NULL,
+    idVrstaVjezbe INTEGER NOT NULL,
+    FOREIGN KEY (idVrstaVjezbe) REFERENCES VrstaVjezbe(idVrstaVjezbe)
+);
+
+CREATE TABLE Serija
+(
+    brPonSerija INTEGER NOT NULL,
+    brkgSerija REAL NOT NULL,
+    redniBrojSerije INTEGER NOT NULL,
+    idVjezba INTEGER NOT NULL,
+    idTrening INTEGER NOT NULL,
+    idVrstaSerije INTEGER NOT NULL,
+    PRIMARY KEY (redniBrojSerije, idVjezba, idTrening),
+    FOREIGN KEY (idVjezba) REFERENCES Vjezba(idVjezba),
+    FOREIGN KEY (idTrening) REFERENCES Trening(idTrening),
+    FOREIGN KEY (idVrstaSerije) REFERENCES VrstaSerije(idVrstaSerije)
+);
+
+CREATE TABLE najboljiRezultat
+(
+    najboljiBrKg REAL NOT NULL,
+    datumPostignuca TEXT NOT NULL,
+    najboljiBrPon INTEGER NOT NULL,
+    idVjezba INTEGER NOT NULL,
+    idKorisnik INTEGER NOT NULL,
+    PRIMARY KEY (najboljiBrPon, idVjezba, idKorisnik),
+    FOREIGN KEY (idVjezba) REFERENCES Vjezba(idVjezba),
+    FOREIGN KEY (idKorisnik) REFERENCES Korisnik(idKorisnik)
+);
+
+CREATE TABLE sastojiSeOd
+(
+    idVjezba INTEGER NOT NULL,
+    idPredlozak INTEGER NOT NULL,
+    PRIMARY KEY (idVjezba, idPredlozak),
+    FOREIGN KEY (idVjezba) REFERENCES Vjezba(idVjezba),
+    FOREIGN KEY (idPredlozak) REFERENCES PredlozakTreninga(idPredlozak)
+);
+
+INSERT INTO Korisnik (jeAdmin, korisnickoIme, spol, hashLozinka, email, saltLozinka) VALUES (1, 'admin', null, '8C6976E5B5410415BDE908BD4DEE15DFB167A9C873FC4BB8A81F6F2AB448A918', 'admin@email.com', '')
+
+
